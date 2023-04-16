@@ -7,7 +7,7 @@ const App = () => {
     const songSelector = document.getElementById('song-selector');
     const loopSelector = document.getElementsByClassName('loop-selector-btn');
 
-    let player = Player();
+    const player = Player();
 
     const onClickPlay = (event) => {
         if (!player) {

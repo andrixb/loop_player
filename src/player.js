@@ -35,13 +35,13 @@ export const Player = () => {
     }
 
     const playerV2 = () => {
-        const loopPlayer = new Gapless5({ loop: true });
         for (let i = 0; i < tracks.length; i++) { 
+            const loopPlayer = new Gapless5({ loop: true });
             loopPlayer.addTrack(`${currentSong}` + tracks[i]);
+            loopPlayer.play();
+        
+            playlist.push(loopPlayer);
         }
-        loopPlayer.play();
-
-        playlist.push(loopPlayer);
     }
 
     const play = () => {
