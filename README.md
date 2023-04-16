@@ -1,15 +1,17 @@
 # 🚀 Welcome to your new awesome project!
 
-This project has been created using **webpack-cli**, you can now run
+Install node on your machine. 
+
+This project has been created using **webpack-cli**, you can now run in the terminal
 
 ```
-npm run build
+yarn
 ```
+to install dependencies.
 
-or
-
+Then:
 ```
-yarn build
-```
+yarn start
+ ```
 
-to bundle your application
+to start the application
