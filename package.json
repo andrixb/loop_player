@@ -31,5 +31,8 @@
     "webpack": "^5.79.0",
     "webpack-cli": "^5.0.1",
     "webpack-dev-server": "^4.13.3"
+  },
+  "dependencies": {
+    "@regosen/gapless-5": "^1.4.1"
   }
 }
