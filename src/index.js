@@ -7,39 +7,53 @@ const App = () => {
     const songSelector = document.getElementById('song-selector');
     const loopSelector = document.getElementsByClassName('loop-selector-btn');
 
-    let player = {};
+    let player = Player();
 
-    const init = () => {
-        player = Player();
-        initListeners();
+    const onClickPlay = (event) => {
+        if (!player) {
+            return;
+        }
+
+        player.play();
+
+        if (event.target) {
+            event.target.style.backgroundImage = 'linear-gradient(#B384C9, #391F5B 50%)';
+
+            if (!player.isPlaying) {
+                event.target.style.backgroundImage =
+                    'linear-gradient(rgba(210, 169, 230, 0.84), rgba(108, 88, 135, 0.84) 50%)';
+            }
+        }
+    }
+    
+    const onChangeSongSelector = (event) => { 
+        if (event.target && player) player.loadNewSong(event.target.value); 
+    }
+
+    const onClickLoopSelector = (event) => {
+        if (!player) {
+            return;
+        }
+
+        if (event.target) {
+            const state = player.selectCurrentLoop(event.target.value);
+            if (!state) {
+                event.target.style.backgroundImage = 'linear-gradient(rgba(210, 169, 230, 0.84), rgba(108, 88, 135, 0.84) 50%)';
+            }
+            event.target.style.backgroundImage = 'linear-gradient(#B384C9, #391F5B 50%)';
+        }
     }
 
     const initListeners = () => {
-        playBtn.onclick = (event) => {
-            const isPlaying = player.play();
-
-            if (!isPlaying) {
-                event.target.style.backgroundImage = 'linear-gradient(rgba(210, 169, 230, 0.84), rgba(108, 88, 135, 0.84) 50%)';
-            }
-
-            if (event.target) event.target.style.backgroundImage = 'linear-gradient(#B384C9, #391F5B 50%)';
-        }
-        
-        songSelector.onchange = (event) => { if (event.target) player.loadNewSong(event.target.value); }
+        playBtn.onclick = onClickPlay;
+        songSelector.onchange = onChangeSongSelector;
 
         for (let i = 0; i < loopSelector.length; i++) {
-            loopSelector[i].onclick = (event) => {
-                if (event.target) {
-                    const state = player.selectCurrentLoop(event.target.value);
-                    state ?
-                        event.target.style.backgroundImage = 'linear-gradient(rgba(210, 169, 230, 0.84), rgba(108, 88, 135, 0.84) 50%)' :
-                        event.target.style.backgroundImage = 'linear-gradient(#B384C9, #391F5B 50%)';
-                }
-            }
+            loopSelector[i].onclick = onClickLoopSelector;
         }
     }
 
-    init();
+    initListeners();
 }
 
 document.addEventListener('DOMContentLoaded', () => App(), false);
