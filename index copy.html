@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="./src/style.css">
+</head>
+
+<body>
+    <div style="text-align: center; margin-bottom: 30px;">
+        <h1 style="color:white; font-family: Arial">Mixing Faders v1.0</h1>
+        <p style="color:white; font-family: Arial">d-_-b</p>
+
+        <select id="song-selector" style="margin: 10px;">
+            <option value="SynthPop">
+                Synth Pop
+            </option>
+            <option value="DarkNight">
+                Dark Night
+            </option>
+        </select>
+        <button id="play-btn" class="button-style" style="margin: 0 auto;">Play</button>
+    </div>
+
+    <table>
+        <tr>
+            <td><button style="margin: 0 auto;" class="button-style loop-selector-btn" value='_Drums.mp3'>Drums</button></td>
+            <td><button style="margin: 0 auto;" class="button-style loop-selector-btn" value='_Kick.mp3'>Kick</button></td>
+        </tr>
+        <tr>
+            <td><button style="margin: 0 auto;" class="button-style loop-selector-btn" value='_Perc.mp3'>Perc</button></td>
+            <td><button style="margin: 0 auto;" class="button-style" value='_Bass.mp3'>Bass</button></td>
+        </tr>
+        <tr>
+            <td><button style="margin: 0 auto;" class="button-style loop-selector-btn" value='_Synth1.mp3'>Synth1</button></td>
+            <td><button style="margin: 0 auto;" class="button-style loop-selector-btn" value='_Synth2.mp3'>Synth2</button></td>
+        </tr>
+        <tr>
+            <td> <button style="margin: 0 auto;" class="button-style loop-selector-btn" value='_Arp.mp3'>Arp</button></td>
+            <td> <button style="margin: 0 auto;" class="button-style loop-selector-btn" value='_Lead.mp3'>Lead</button></td>
+        </tr>
+    </table>
+  
+    <script src="./src/app.js"></script>
+</body>
+<footer style="color:white; text-align: center; font-size: 0.8em; margin-top: 50px; font-family: Arial">
+    <p>Created by Jose L. Pomar</p>
+</footer>
+
+</html>
