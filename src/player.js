@@ -70,7 +70,6 @@ export const Player = () => {
             }
     }
     
-
     const selectCurrentLoop = (value) => {
         if (tracks && tracks.includes(value)) {
             const index = tracks.indexOf(value);
@@ -90,7 +89,7 @@ export const Player = () => {
     }
 
     return {
-       tracks, play, pause, selectCurrentLoop, loadNewSong, isPlaying
+       play, pause, selectCurrentLoop, loadNewSong, isPlaying
     }
 
 };
