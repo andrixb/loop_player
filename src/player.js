@@ -50,6 +50,7 @@ export const Player = () => {
             alert('Cannot Play: tracks list is empty. Select some tracks first');
         }
         if (isPlaying === false) {
+            // Change here the player version 
             playerV2();
 
             isPlaying = true;
