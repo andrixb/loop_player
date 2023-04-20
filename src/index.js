@@ -10,18 +10,16 @@ const App = () => {
     const player = Player();
 
     const onClickPlay = (event) => {
-        if (!player) {
-            return;
+        if (player) {
+            player.play();
         }
 
-        player.play();
-
         if (event.target) {
-            event.target.classList.toggle('button-selected');
+            event.target.classList.toggle('button-selected',  player.isPlaying);
         }
 
         if (event.target && !player.isPlaying) {
-            event.target.classList.toggle('button-selected');
+            event.target.classList.remove('button-selected');
         }
     }
     
@@ -36,10 +34,12 @@ const App = () => {
 
         if (event.target) {
             const state = player.selectCurrentLoop(event.target.value);
-            if (!state) {
-                event.target.classList.toggle('button-selected');
+
+            if (state) {
+                event.target.classList.add('button-selected');
+            } else {
+                event.target.classList.remove('button-selected');
             }
-            event.target.classList.toggle('button-selected');
         }
     }
 

@@ -67,19 +67,18 @@ export const Player = () => {
                 playlist[i].pause();
             }
             playlist = [];
-        }
+            }
     }
+    
 
     const selectCurrentLoop = (value) => {
-        if (tracks) {
-            if (tracks.includes(value)) {
-                const index = tracks.indexOf(value);
-                tracks.splice(index, 1);
-                return true;
-            } else {
-                tracks.push(value);
-                return false;
-            }
+        if (tracks && tracks.includes(value)) {
+            const index = tracks.indexOf(value);
+            tracks.splice(index, 1);
+            return false;
+        } else {
+            tracks.push(value);
+            return true;
         }
     }
 
@@ -91,7 +90,7 @@ export const Player = () => {
     }
 
     return {
-        play, pause, selectCurrentLoop, loadNewSong, isPlaying
+       tracks, play, pause, selectCurrentLoop, loadNewSong, isPlaying
     }
 
 };
