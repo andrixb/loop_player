@@ -12,19 +12,20 @@ const App = () => {
     const onClickPlay = (event) => {
         if (player) {
             player.play();
-        }
 
-        if (event.target) {
-            event.target.classList.add('button-selected');
-        }
 
-        if (event.target && !player.isPlaying) {
-            event.target.classList.remove('button-selected');
+            if (event.target && player.isPlaying) {
+                event.target.classList.add('button-selected');
+            }
+
+            if (event.target && !player.isPlaying) {
+                event.target.classList.remove('button-selected');
+            }
         }
     }
-    
-    const onChangeSongSelector = (event) => { 
-        if (event.target && player) player.loadNewSong(event.target.value); 
+
+    const onChangeSongSelector = (event) => {
+        if (event.target && player) player.loadNewSong(event.target.value);
     }
 
     const onClickLoopSelector = (event) => {
