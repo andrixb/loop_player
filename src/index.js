@@ -15,7 +15,7 @@ const App = () => {
         }
 
         if (event.target) {
-            event.target.classList.toggle('button-selected',  player.isPlaying);
+            event.target.classList.add('button-selected');
         }
 
         if (event.target && !player.isPlaying) {
