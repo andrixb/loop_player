@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Webpack App</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div style="text-align: center; margin-bottom: 30px;">
+        <h1 style="color:white; font-family: Arial">Mixing Faders v1.0</h1>
+        <p style="color:white; font-family: Arial">d-_-b</p>
+
+        <select id="song-selector" style="margin: 10px;">
+            <option value="SynthPop">
+                Synth Pop
+            </option>
+            <option value="DarkNight">
+                Dark Night
+            </option>
+        </select>
+        <button id="play-btn" class="button-style" style="margin: 0 auto;">Play</button>
+    </div>
+
+    <table>
+        <tr>
+            <td><button style="margin: 0 auto;" class="button-style loop-selector-btn" value='_Drums.m4a'>Drums</button>
+            </td>
+            <td><button style="margin: 0 auto;" class="button-style loop-selector-btn" value='_Kick.m4a'>Kick</button>
+            </td>
+        </tr>
+        <tr>
+            <td><button style="margin: 0 auto;" class="button-style loop-selector-btn" value='_Perc.m4a'>Perc</button>
+            </td>
+            <td><button style="margin: 0 auto;" class="button-style loop-selector-btn" value='_Bass.m4a'>Bass</button></td>
+        </tr>
+        <tr>
+            <td><button style="margin: 0 auto;" class="button-style loop-selector-btn"
+                    value='_Synth1.m4a'>Synth1</button></td>
+            <td><button style="margin: 0 auto;" class="button-style loop-selector-btn"
+                    value='_Synth2.m4a'>Synth2</button></td>
+        </tr>
+        <tr>
+            <td> <button style="margin: 0 auto;" class="button-style loop-selector-btn" value='_Arp.m4a'>Arp</button>
+            </td>
+            <td> <button style="margin: 0 auto;" class="button-style loop-selector-btn" value='_Lead.m4a'>Lead</button>
+            </td>
+        </tr>
+    </table>
+
+    <script src="./gapless5.js" language="JavaScript" type="text/javascript"></script>
+    <script src="./index.js" language="JavaScript" type="text/javascript"></script>
+
+</body>
+<footer style="color:white; text-align: center; font-size: 0.8em; margin-top: 50px; font-family: Arial">
+    <p>Created by Jose L. Pomar</p>
+</footer>
+
+</html>
